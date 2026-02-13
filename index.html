@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nanna 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#ffb6c1,#ffc0cb,#ffd6e0,#ffe4ec);
+  color:#7a1f3d;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* bold italic everywhere */
+*{
+  font-style:italic !important;
+  font-weight:700 !important;
+}
+
+/* pages */
+.page{display:none;min-height:100vh;padding:20px;}
+.active{display:block;}
+
+/* 🎀 border stickers */
+body::before{
+  content:"🎀 💖 ✨ 🌸 💕 🎀";
+  position:fixed;
+  top:8px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:22px;
+}
+body::after{
+  content:"🎀 💖 ✨ 🌸 💕 🎀";
+  position:fixed;
+  bottom:8px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:22px;
+}
+
+/* 💎 glass card */
+.card{
+  max-width:420px;
+  margin:40px auto;
+  padding:30px 20px 40px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(14px);
+  border:2px solid rgba(255,255,255,0.6);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* 👑 hero photo */
+.hero-photo{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid white;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25),
+             0 0 25px rgba(255,77,141,0.6);
+  margin-top:10px;
+  animation:floatPic 3s ease-in-out infinite;
+}
+
+@keyframes floatPic{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+/* ✍️ typewriter title */
+.main-title{
+  font-size:42px;
+  margin-top:18px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  min-height:60px;
+}
+
+/* emotional line */
+.emoline{
+  font-size:16px;
+  margin:10px 0 14px;
+  opacity:.9;
+}
+
+/* highlight dates */
+.highlight{
+  background:#ff4d8d;
+  color:white;
+  padding:7px 16px;
+  border-radius:25px;
+  display:inline-block;
+  margin:6px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 💗 heart button */
+.heart-btn{
+  font-size:48px;
+  margin-top:14px;
+  cursor:pointer;
+  transition:.25s;
+}
+.heart-btn:hover{transform:scale(1.2);}
+
+/* 🎈 floating balloons */
+.balloon{
+  position:fixed;
+  bottom:-120px;
+  font-size:30px;
+  animation:floatUp linear infinite;
+  opacity:.8;
+}
+@keyframes floatUp{
+  to{
+    transform:translateY(-120vh);
+  }
+}
+
+/* 🎉 poppers */
+.pop{
+  position:fixed;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  z-index:999;
+  animation:popFall linear forwards;
+}
+@keyframes popFall{
+  to{
+    transform:translateY(100vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* second page */
+.gallery{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin:24px 0;
+}
+.photo{
+  width:170px;
+  height:210px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.25);
+}
+.message{
+  max-width:650px;
+  margin:20px auto;
+  font-size:17px;
+  line-height:1.7;
+  padding:0 12px;
+}
+footer{margin-top:30px;font-size:13px;}
+</style>
+</head>
+
+<body>
+
+<!-- 🎈 balloons -->
+<script>
+for(let i=0;i<8;i++){
+  const b=document.createElement("div");
+  b.className="balloon";
+  b.innerHTML="🎈";
+  b.style.left=Math.random()*100+"vw";
+  b.style.animationDuration=(6+Math.random()*6)+"s";
+  document.body.appendChild(b);
+}
+</script>
+
+<!-- 💖 PAGE 1 -->
+<div id="page1" class="page active">
+  <div class="card">
+
+    <!-- 👑 CHANGE THIS TO HIS PHOTO -->
+    <img src="photo4.jpeg" class="hero-photo">
+
+    <div id="title" class="main-title"></div>
+
+    <div class="emoline">Forever i will always be with you 💞</div>
+
+    <div class="highlight">Something special 01.02.25 💞</div><br>
+    <div class="highlight">You turned 21 now: 14.02.26 🎉</div>
+
+    <div class="heart-btn" onclick="openPage()">
+  💖
+  <div style="font-size:14px;margin-top:4px;">click here</div>
+</div>
+
+  </div>
+</div>
+
+<!-- 💕 PAGE 2 -->
+<div id="page2" class="page">
+  <h2>Our Beautiful Memories ✨</h2>
+
+  <div class="gallery">
+    <img src="photo1.jpeg" class="photo">
+    <img src="photo2.PNG" class="photo">
+    <img src="photo3.jpeg" class="photo">
+  </div>
+
+  <div class="message">
+  
+    "its been more than year we are together no matter what .forever ill always be with you.
+     this greeting is not just a page but mixed with emotions.. you know how much you mean to me...
+     im here to bear all ups and downs with you...my day starts with you and ends withyou..
+     chala travell chesam idk entha mandhitho unna neetho unna feeling evaritho raledhu.
+     i feel so safe with you.I LOVE YOU ....
+     ni sucess kosam nuvvu entha pray chesthunavo niku minchi nenu double pray chesthunna..
+     im the first person who will the most happiest one..
+    Ilane na kopanni,alakani,badhani ,santhoshani..anni baristhav ani 💞<br><br>
+    i feel so safe with you. 🫶<br><br>
+    <b>I LOVE YOU ❤️</b><br><br>
+    itlu ni BABBU 💕
+  </div>
+
+  <footer>Made with endless love 💘</footer>
+</div>
+
+<script>
+/* ✍️ typewriter */
+const text="HAPPY BIRTHDAY NANNA 🎂💙";
+let i=0;
+function typeWriter(){
+  if(i<text.length){
+    document.getElementById("title").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,60);
+  }
+}
+typeWriter();
+
+/* 🎉 poppers + page switch */
+function poppers(){
+  const colors=["#ff4d8d","#ffd166","#06d6a0","#a0c4ff","#cdb4db"];
+  for(let i=0;i<40;i++){
+    const p=document.createElement("div");
+    p.className="pop";
+    p.style.left=(Math.random()*window.innerWidth)+"px";
+    p.style.top="-20px";
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.animationDuration=(Math.random()*2+2)+"s";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),4000);
+  }
+}
+
+function openPage(){
+  poppers();
+  setTimeout(()=>{
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.add("active");
+  },700);
+}
+</script>
+
+</body>
+</html>
